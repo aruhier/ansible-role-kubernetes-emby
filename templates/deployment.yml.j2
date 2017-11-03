@@ -21,6 +21,8 @@ spec:
         name: emby
         resources:
           {{ kubernetes_emby_resources | to_yaml | indent(10) }}
+        ports:
+        - containerPort: 8096
         volumeMounts:
         - mountPath: /config
           name: emby-config
