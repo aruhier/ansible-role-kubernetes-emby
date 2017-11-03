@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ kubernetes_emby_ingress.name }}
+{% if kubernetes_emby_ingress.annotations %}
+  annotations:
+    {{ kubernetes_emby_ingress.annotations | to_nice_yaml | indent }}
+{% endif %}
+spec:
+{% if kubernetes_emby_ingress.tls %}
+  tls:
+    {{ kubernetes_emby_ingress.tls | to_nice_yaml | indent }}
+{% endif %}
+  rules:
+  - host: {{ kubernetes_emby_ingress.host }}
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: {{ kubernetes_emby_service }}
+          servicePort: 80

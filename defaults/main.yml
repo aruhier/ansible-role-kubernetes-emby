@@ -1,0 +1,32 @@
+---
+
+kubernetes_emby_image: "emby/embyserver:x86_64_3.2.35.0"
+
+kubernetes_emby_namespace: "default"
+kubernetes_emby_deployment: "emby-deployment"
+kubernetes_emby_app: "emby"
+kubernetes_emby_service: "emby"
+
+kubernetes_emby_node_selector: {}
+kubernetes_emby_replicas: 1
+kubernetes_emby_revision_history: 1
+
+kubernetes_emby_resources:
+  limits:
+    memory: "1.5Gi"
+  requests:
+    memory: "512Mi"
+
+kubernetes_emby_media_volumes: {}
+
+kubernetes_emby_config_volume:
+  definition:
+
+kubernetes_emby_setup_ingress: false
+kubernetes_emby_ingress:
+  name: "emby-ingress"
+  host: "emby.example.com"
+  annotations:
+  tls:
+
+# vim: set ts=2 sw=2:

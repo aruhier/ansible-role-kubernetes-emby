@@ -1,0 +1,17 @@
+---
+
+- name: Install emby
+  command: kubectl apply -f -
+  args:
+    stdin: "{{ item }}"
+  with_items:
+    - "{{ lookup('template', 'deployment.yml.j2') }}"
+    - "{{ lookup('template', 'service.yml.j2') }}"
+
+- name: Create ingress
+  command: kubectl apply -f -
+  args:
+    stdin: "{{ lookup('template', 'ingress.yml.j2') }}"
+  when: kubernetes_emby_setup_ingress
+
+# vim: set ts=2 sw=2:
