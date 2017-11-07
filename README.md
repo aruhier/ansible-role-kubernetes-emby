@@ -23,6 +23,11 @@ kubernetes_emby_revision_history: 1
 # Node selector
 kubernetes_emby_node_selector: {}
 
+# Add custom labels in the deployment metadata section
+kubernetes_emby_deployment_labels: {}
+# Add custom annotations in the deployment metadata section
+kubernetes_emby_deployment_annotations: {}
+
 kubernetes_emby_resources:
   limits:
     memory: "1.5Gi"

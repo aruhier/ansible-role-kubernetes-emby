@@ -11,6 +11,9 @@ kubernetes_emby_node_selector: {}
 kubernetes_emby_replicas: 1
 kubernetes_emby_revision_history: 1
 
+kubernetes_emby_deployment_labels: {}
+kubernetes_emby_deployment_annotations: {}
+
 kubernetes_emby_resources:
   limits:
     memory: "1.5Gi"
