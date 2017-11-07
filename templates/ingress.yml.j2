@@ -2,6 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ kubernetes_emby_ingress.name }}
+  namespace: {{ kubernetes_emby_namespace }}
 {% if kubernetes_emby_ingress.annotations %}
   annotations:
     {{ kubernetes_emby_ingress.annotations | to_nice_yaml | indent }}

@@ -2,6 +2,7 @@ apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
   name: {{ kubernetes_emby_deployment }}
+  namespace: {{ kubernetes_emby_namespace }}
   labels:
     app: {{ kubernetes_emby_app }}
 spec:

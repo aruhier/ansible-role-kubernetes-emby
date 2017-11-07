@@ -2,6 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: {{ kubernetes_emby_service }}
+  namespace: {{ kubernetes_emby_namespace }}
 spec:
   selector:
     app: {{ kubernetes_emby_app }}
