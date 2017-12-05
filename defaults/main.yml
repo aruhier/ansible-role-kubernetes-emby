@@ -1,6 +1,6 @@
 ---
 
-kubernetes_emby_image: "emby/embyserver:x86_64_3.2.40.0"
+kubernetes_emby_image: "emby/embyserver:x86_64_3.2.50.0"
 
 kubernetes_emby_namespace: "default"
 kubernetes_emby_deployment: "emby-deployment"
