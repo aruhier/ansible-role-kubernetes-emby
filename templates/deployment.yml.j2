@@ -30,7 +30,18 @@ spec:
         resources:
           {{ kubernetes_emby_resources | to_yaml | indent(10) }}
         ports:
-        - containerPort: 8096
+        - name: http
+          containerPort: 8096
+        readinessProbe:
+          tcpSocket:
+            port: http
+          initialDelaySeconds: 10
+          periodSeconds: 5
+        livenessProbe:
+          tcpSocket:
+            port: http
+          initialDelaySeconds: 60
+          periodSeconds: 10
         volumeMounts:
         - mountPath: /config
           name: emby-config
