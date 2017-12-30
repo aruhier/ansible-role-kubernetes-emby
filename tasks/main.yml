@@ -5,7 +5,7 @@
   args:
     stdin: "{{ item }}"
   with_items:
-    - "{{ lookup('template', 'deployment.yml.j2') }}"
+    - "{{ lookup('template', 'statefulset.yml.j2') }}"
     - "{{ lookup('template', 'service.yml.j2') }}"
 
 - name: Create ingress

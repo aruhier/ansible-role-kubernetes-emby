@@ -3,7 +3,7 @@
 kubernetes_emby_image: "emby/embyserver:x86_64_3.2.60.0"
 
 kubernetes_emby_namespace: "default"
-kubernetes_emby_deployment: "emby-deployment"
+kubernetes_emby_statefulset: "emby"
 kubernetes_emby_app: "emby"
 kubernetes_emby_service: "emby"
 
@@ -11,8 +11,8 @@ kubernetes_emby_node_selector: {}
 kubernetes_emby_replicas: 1
 kubernetes_emby_revision_history: 1
 
-kubernetes_emby_deployment_labels: {}
-kubernetes_emby_deployment_annotations: {}
+kubernetes_emby_statefulset_labels: {}
+kubernetes_emby_statefulset_annotations: {}
 
 kubernetes_emby_resources:
   limits:

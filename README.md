@@ -3,6 +3,8 @@ Ansible Role: Emby for Kubernetes
 
 Ansible role to install Emby on Kubernetes.
 
+It uses Statefulset to avoid simultaneous locks on the database.
+
 Role Variables
 --------------
 
@@ -11,8 +13,8 @@ Role Variables
 kubernetes_emby_namespace: "default"
 # App name (used as selector)
 kubernetes_emby_app: "emby"
-# Deployment name
-kubernetes_emby_deployment: "emby-deployment"
+# Statefulset name
+kubernetes_emby_statefulset: "emby"
 # Service name
 kubernetes_emby_service: "emby"
 
@@ -23,10 +25,10 @@ kubernetes_emby_revision_history: 1
 # Node selector
 kubernetes_emby_node_selector: {}
 
-# Add custom labels in the deployment metadata section
-kubernetes_emby_deployment_labels: {}
-# Add custom annotations in the deployment metadata section
-kubernetes_emby_deployment_annotations: {}
+# Add custom labels in the statefulset metadata section
+kubernetes_emby_statefulset_labels: {}
+# Add custom annotations in the statefulset metadata section
+kubernetes_emby_statefulset_annotations: {}
 
 kubernetes_emby_resources:
   limits:
