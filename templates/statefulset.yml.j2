@@ -50,6 +50,9 @@ spec:
           name: emby-config
           {% if kubernetes_emby_config_volume.subPath is defined %}subPath: {{ kubernetes_emby_config_volume.subPath }}{% endif %}
 
+        - mountPath: /config/transcoding-temp
+          name: emby-config-temp
+
 {% for k, v in kubernetes_emby_media_volumes.items() %}
         - mountPath: /media/{{ k }}
           name: emby-media-{{ k }}
@@ -62,6 +65,7 @@ spec:
 {% endif %}
       volumes:
       - {name: emby-config, {{ kubernetes_emby_config_volume.definition | to_yaml }}}
+      - {name: emby-config-temp, emptyDir: {}}
 {% for k, v in kubernetes_emby_media_volumes.items() %}
       - {name: emby-media-{{ k }}, {{ v.definition | to_yaml }}}
 {% endfor %}
