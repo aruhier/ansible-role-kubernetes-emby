@@ -1,6 +1,6 @@
 ---
 
-kubernetes_emby_image: "emby/embyserver:3.5.3.0"
+kubernetes_emby_image: "emby/embyserver:3.6.0.75"
 
 kubernetes_emby_namespace: "default"
 kubernetes_emby_statefulset: "emby"
